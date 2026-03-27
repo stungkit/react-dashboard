@@ -1,100 +1,89 @@
-## React Dashboard — "[isomorphic](http://nerds.airbnb.com/isomorphic-javascript-future-web-apps/)" admin dashboard template
-built with [React](https://facebook.github.io/react/), [Bootstrap](http://getbootstrap.com/), [React Router](https://reacttraining.com/react-router/),
-[Redux](http://redux.js.org/) and [GraphQL](http://graphql.org/) based on
-[Create React App](https://github.com/facebook/create-react-app) and latest industry best practices.
+# React Dashboard Template
 
-[View Demo](https://flatlogic.com/admin-dashboards/react-dashboard/demo) | [Download](https://github.com/flatlogic/react-dashboard.git) | [More templates](https://flatlogic.com/templates) | [Support forum](https://flatlogic.com/forum)
+Modern dashboard starter rebuilt on top of `Vite`, `React 19`, `React Router 7`, `Redux Toolkit`, `Bootstrap 5`, and `TypeScript` tooling.
 
-[![react-dashboard](screenshot.png)](https://flatlogic.com/admin-dashboards/react-dashboard/demo)
+![Dashboard preview](screenshot.png)
 
-This seed project is like a free version of a template you can find on [Themeforest](https://themeforest.net/category/site-templates/admin-templates) or [Wrapbootstrap](https://wrapbootstrap.com/themes/admin), with working backend integration, to get you started on your next [business software](https://flatlogic.com/) development.
+## Stack
 
+- `React 19`
+- `Vite 8`
+- `React Router 7` data router
+- `Redux Toolkit 2`
+- `Bootstrap 5` + `reactstrap`
+- `Recharts`
+- `Vitest` + Testing Library
+- `ESLint 9` flat config
 
-## Features
-* React
-* Mobile friendly layout (responsive)
-* React Router
-* Bootstrap3
-* GraphQL
-* Nodejs backend inegration
-* Sass styles
-* Stylish, clean, responsive layout
-* Lots of utility css classes for rapid development (flatlogic css set)
-* Authentication
-* CRUD operations examples
+## What is included
 
-## Quick Start
+- Modern app shell with lazy routes and route guards
+- Demo authentication flow backed by local session storage
+- Demo posts module powered by Redux Toolkit slices
+- Bootstrap icon explorer, dashboard widgets, charts, tables, notifications, and maps
+- SCSS theme layer adapted to Bootstrap 5
 
-#### 1. Get the latest version
+## Requirements
 
-You can start by cloning the latest version of React Dashboard on your
-local machine by running:
+- `Node.js 22.12+`
+- `npm 10+`
 
-```shell
-$ git clone -o react-dashboard -b master --single-branch \
-      https://github.com/flatlogic/react-dashboard.git MyApp
-$ cd MyApp
+## Getting started
+
+```bash
+npm install
+npm run dev
 ```
 
-#### 2. Run `yarn install`
+The app starts with Vite and is available on the local URL printed in the terminal.
 
-This will install both run-time project dependencies and developer tools listed
-in [package.json](../package.json) file.
+## Demo access
 
-#### 3. Run `yarn dev`
+Use the built-in local demo account on the login screen:
 
-This command will start the app with simultaneously with express server,
-set up your database, start local server XAMPP, opensever, or other tool
-to start database, connect to it in file 
-```shell
-src > data > sequelize.js.
+```text
+user / password
 ```
-Also go to  
-```shell
-src > data > schema.js 
+
+## Scripts
+
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+npm run typecheck
+npm run test
+npm run test:watch
 ```
-and enable mutation. This preparation
-will enable to realize CRUD operations locally
 
-### 4. How to create db
+- `npm run dev` starts the Vite development server.
+- `npm run build` runs TypeScript checks and creates the production bundle.
+- `npm run preview` serves the built bundle locally after `npm run build`.
+- `npm run lint` runs ESLint.
+- `npm run typecheck` runs TypeScript without emitting files.
+- `npm run test` runs the Vitest suite once.
+- `npm run test:watch` starts Vitest in watch mode.
 
-Create db. For instance name it "sequelize" and add posts table to it,
-your table should have same structure as you can see on the screenshot
-<br>
-![table structure](table.png)
+## Environment variables
 
-> [http://localhost:3000/](http://localhost:3000/) — Node.js server<br>
-> [http://localhost:3000/graphql](http://localhost:3000/graphql) — GraphQL server and IDE<br>
+Create a local `.env` file only when you need one of these optional behaviors:
 
-#### 5. Run `yarn build`
+```bash
+# optional: switch the maps page to Google Maps instead of the built-in OSM fallback
+VITE_GOOGLE_MAPS_API_KEY=your_api_key
 
-Builds the app for production to the build folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# optional: deploy the app under a sub-path, for example /react-dashboard/
+VITE_BASE_PATH=/your-base-path/
+```
 
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+- Without `VITE_GOOGLE_MAPS_API_KEY`, the maps demo automatically falls back to an embedded OpenStreetMap view.
+- Use `VITE_BASE_PATH` only when the app is deployed under a sub-path instead of the site root.
 
-Now you can open your web app in a browser, on mobile devices and start
-hacking. Whenever you modify any of the source files inside the `/src` folder,
-the module bundler ([Webpack](http://webpack.github.io/)) will recompile the
-app on the fly and refresh all the connected browsers.
+## Project notes
 
-For more info please refer to [getting started](./docs/getting-started.md) guide to download and run the project (Node.js >= 6.5)
-
-## Support
-For any additional information please go to our [**support forum**](https://flatlogic.com/forum) and raise your questions or feedback provide there. We highly appreciate your participation!
-
-## How can I support developers?
-- Star our GitHub repo :star:
-- [Tweet about it](https://twitter.com/intent/tweet?text=Amazing%20dashboard%20built%20with%20NodeJS,%20React%20and%20Bootstrap!&url=https://github.com/flatlogic/react-dashboard&via=flatlogic).
-- Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
-- Follow [@flatlogic on Twitter](https://twitter.com/flatlogic).
-- Subscribe to Flatlogic newsletter at [flatlogic.com](https://flatlogic.com/)
-- Like our page on [Facebook](https://www.facebook.com/flatlogic/) :thumbsup:
-
-## Premium themes
-Looking for premium themes and templates? Check out more [admin dashboard templates at flatlogic.com](https://flatlogic.com/admin-dashboards).
-
-## License
-
-[MIT](https://github.com/flatlogic/react-dashboard/blob/master/LICENSE.txt) and another [MIT](https://github.com/flatlogic/react-dashboard/blob/master/LICENSE-react-starter-kit.txt) from RSK.
+- The legacy CRA, GraphQL demo backend, old Redux setup, and browser JWT/polyfill hacks were removed.
+- The template keeps demo data local by default so it can run without a backend.
+- The app root redirects to `/login` for guests and to `/app/main` for active demo sessions.
+- The active local workflow is `npm install` + `npm run dev`; there is no `npm start` script in this template.
+- `yarn.lock` may still exist from the original project history, but the active workflow is `npm`.

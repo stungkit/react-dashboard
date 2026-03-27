@@ -1,4 +1,4 @@
-@import '../../styles/app';
+@use '../../styles/app' as *;
 
 .root {
   :global {
@@ -16,24 +16,15 @@
         text-decoration: none;
       }
 
-      .bi,
-      .fa,
-      .fi {
+      .bi {
         width: 32px;
         margin-right: 10px;
       }
 
       &:hover {
-        .bi,
-        .fa,
-        .fi {
+        .bi {
           font-size: 28px;
           top: 2px;
-        }
-
-        .fa,
-        .fi {
-          vertical-align: -5px;
         }
 
         .bi {
